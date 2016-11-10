@@ -5,10 +5,7 @@ import java.security.NoSuchAlgorithmException;
 import java.lang.*;
 import java.security.SecureRandom;
 import java.util.Random;
-
-/**
- * Created by Raja gopal on 10-11-2016.
- */
+  
 public class hash_salt {
     private static final Random RANDOM = new SecureRandom();
 

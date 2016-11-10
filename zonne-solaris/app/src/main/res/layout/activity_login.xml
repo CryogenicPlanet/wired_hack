@@ -68,9 +68,23 @@
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="2dp"
                 android:layout_marginTop="16dp"
+                android:background="#6666ff"
                 android:text="@string/action_sign_in_short"
+                android:textColor="#ffffff"
                 android:textStyle="bold" />
+
+            <Button
+                style="?android:textAppearanceSmall"
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SIGN UP"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal" />
 
         </LinearLayout>
     </ScrollView>

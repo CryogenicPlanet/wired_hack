@@ -5,7 +5,7 @@ import java.security.NoSuchAlgorithmException;
 import java.lang.*;
 import java.security.SecureRandom;
 import java.util.Random;
-  
+
 public class hash_salt {
     private static final Random RANDOM = new SecureRandom();
 
@@ -28,7 +28,7 @@ public class hash_salt {
             return null;
 
     }
-    public byte[] salt() {
+    public byte[] getSalt() {
         byte[] salt = new byte[16];
         RANDOM.nextBytes(salt);
         return salt;

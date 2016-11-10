@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -25,12 +26,16 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_sign_up);
-        Button sign_up = (Button) findViewById(R.id.Sign_up)
+        final Button sign_up = (Button) findViewById(R.id.Sign_up);
+
                 sign_up.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        View header = (View)getLayoutInflater().inflate(R.layout.status_layout, null);
+                        TextView headerValue = (TextView)header . findViewById(R.id.status);
                         if(!(findViewById(R.id.password) == (findViewById(R.id.confirm_password)){
                             //password don't match
+                            headerValue.setText("Passwords Don't match");
                                 } else{
                             hash_salt hasher = new hash_salt();
                             byte[] salt = hasher.getSalt();
@@ -47,7 +52,13 @@ public class SignUpActivity extends AppCompatActivity {
 
                             };
 
-                            boolean Signup = add_user(v,userinfo);
+                            boolean Signup = add_user(v,userinfo)
+
+
+                            if (Signup)
+                            headerValue.setText("Added User");
+                            else
+                                headerValue.setText("Failled to add new user");
 
                         }
                     }

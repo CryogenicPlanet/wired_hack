@@ -40,6 +40,20 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) 
 {
+  $dn_amount;
+  $pid = $row['PID'];
+ // echo $pid;
+  
+  $sql_donation  = "SELECT Amount FROM Donations WHERE PID ='" . $pid ."'";
+  $result_dn = $link->query($sql_donation);
+ // echo $sql_donation;
+    if ($result_dn->num_rows > 0) {
+    // output data of each row
+    while($row_dn = $result_dn->fetch_assoc()) {
+      $dn_amount = $dn_amount + $row_dn['Amount'];
+    //  echo $dn_amount;
+    }
+    }
   echo '
  <div class="row">
         <div class="col s8 offset-s2">
@@ -65,6 +79,7 @@ if ($result->num_rows > 0) {
     <div class="card-content blue lighten-1">
       <h5>Location : '. $row['Location'].'</h5>
       <h5>Desired Investment : '. $row['DesiredAmount'].'</h5>
+      <h5> Donated Amount : ' . $dn_amount .' </h5>
        <div style="float: left;"><p>By Xyz Inc.</p> </div>
 
         <!-- Modal Trigger -->
@@ -73,10 +88,10 @@ if ($result->num_rows > 0) {
  
   <div style="float: right;" id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
-      <h4 align="center">'. $row['title'].'</h4>
+      <h4 align="center">'. $row['title'] .'</h4>
       <p>'. $row['Descrption'].'</p><br>
     <div style="float: right;"><a class="waves-effect waves-light btn red">Cancel</a></div>
-    <div align="right"><a class="waves-effect waves-light btn blue">Donate</a></div>
+    <div align="right"><a class="waves-effect waves-light btn blue" href="donation.php?pid='. $pid . '"> Donate</a></div>
     </div> 
     <script type="text/javascript">$(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
@@ -96,8 +111,11 @@ if ($result->num_rows > 0) {
 </div>
 ' ;
 }
-
 }
 
+
+function printPid($x){
+  echo $x;
+}
 $link->close();
 ?>

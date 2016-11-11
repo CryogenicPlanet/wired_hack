@@ -1,7 +1,7 @@
- <html>
+<html>
     <head>
       <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 
@@ -18,33 +18,12 @@
                 <div class="nav-wrapper">
                   <a href="#" class="brand-logo">Zonne Solaris</a>
                   <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="discover.html">Discover</a></li></ul>
+                    <li><a href="home.php">Home</a></li>
+                    <li><a href="#">Discover</a></li></ul>
                 </div>
               </nav>
           </div>
         </div>
-
-  
-  <!-- <center>
-  <div class="card small" >
-      <div class="row">
-        <div class="col s6 offset-s3">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
-  </center> -->
 
  <div class="row">
         <div class="col s6 offset-s3">
@@ -52,7 +31,21 @@
   <div class="card">
     <div class="card-image">
     <h4 align="center">Title</h4>
-      <img src="https://media.licdn.com/mpr/mpr/jc/AAEAAQAAAAAAAAZ-AAAAJGMxZGIwNWYyLTA5ZDctNGExYy1hZTg5LWE5OWE5Y2QwNDE0Yw.jpg">
+      <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->
+      </li>
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
+       
+      </li>
+      <li>
+        <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
+        
+      </li>
+    </ul>
+  </div>
     </div>
     <div class="card-content blue lighten-1">
       <!-- <span class="card-title activator grey-text text-darken-4">Location : New York<i class="material-icons right">more_vert</i></span> -->
@@ -78,7 +71,11 @@
     <script type="text/javascript">$(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
-  });</script>
+  });
+   $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+    });
+  </script>
   </div>
     </div>
     <!-- <div class="card-reveal grey darken-2">
@@ -89,6 +86,3 @@
 
 </div>
 </div>
-
-</body>
-</html>

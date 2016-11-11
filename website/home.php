@@ -44,7 +44,7 @@ $result = $link->query($sql);
                   <a href="#" class="brand-logo">Zonne Solaris</a>
                   <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="#">Home</a></li>
-                    <li><a href="discover.html">Discover</a></li></ul>
+                    <li><a href="discover.php">Discover</a></li></ul>
                 </div>
               </nav>
           </div>

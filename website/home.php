@@ -73,13 +73,13 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) 
 {
  $sql2 = "SELECT CID FROM Project WHERE PID='" . $row['PID'] . "'";
-  $result2 = $link->query($sql);
+  $result2 = $link->query($sql2);
     if ($result2->num_rows > 0) {
     // output data of each row
     while($row2 = $result2->fetch_assoc()) 
 {
   $sql3 = "SELECT Cname FROM Company WHERE CID='" .$row2['CID'] . "'";
-    $result3 = $link->query($sql);
+    $result3 = $link->query($sql3);
     if ($result3->num_rows > 0) {
     // output data of each row
     while($row3 = $result3->fetch_assoc()) {
@@ -98,7 +98,7 @@ echo '
     </div>
     <div class="card-content teal darken-1">
       <span class="card-title activator grey-text text-darken-4">'. $row['Title'] . '<i class="material-icons right">more_vert</i></span>
-      <p> By'. $row3['Cname'].'</p>
+      <p> By '. $row3['Cname'].'</p>
     </div>
     <div class="card-reveal grey darken-2">
       <span class="card-title grey-text text-lighten-3">'. $row['Title'] . '<i class="material-icons right">close</i></span>

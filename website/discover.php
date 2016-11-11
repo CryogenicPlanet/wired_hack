@@ -54,6 +54,15 @@ if ($result->num_rows > 0) {
     //  echo $dn_amount;
     }
     }
+    $cid = $row['CID'];
+    $sql_c = "SELECT Cname FROM Company WHERE CID ='". $cid ."'";
+    $result_c = $link->query($sql_c);
+     if ($result_c->num_rows > 0) {
+    // output data of each row
+    while($row_c = $result_c->fetch_assoc()) {
+    
+    //  echo $dn_amount;
+    
   echo '
  <div class="row">
         <div class="col s8 offset-s2">
@@ -80,7 +89,7 @@ if ($result->num_rows > 0) {
       <h5>Location : '. $row['Location'].'</h5>
       <h5>Desired Investment : '. $row['DesiredAmount'].'</h5>
       <h5> Donated Amount : ' . $dn_amount .' </h5>
-       <div style="float: left;"><p>By Xyz Inc.</p> </div>
+       <div style="float: left;"><p>By '. $row_c['Cname'] . '</p> </div>
 
         <!-- Modal Trigger -->
   <div align="right"><a class="modal-trigger waves-effect waves-light btn" href="#modal1">More Info</a></div>
@@ -112,7 +121,8 @@ if ($result->num_rows > 0) {
 ' ;
 }
 }
-
+}
+}
 
 function printPid($x){
   echo $x;

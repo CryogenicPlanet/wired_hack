@@ -13,6 +13,59 @@
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-
+          <div class="container">
+              
+    <form class="col s12" action="signup.php" method="post">
+        <div class="input-field col s6">
+           
+          <input  name="username" type="text" class="validate">
+          <label for="icon_prefix">UserName</label>
+        </div>
+        <div class="input-field col s6">
+          <input  name="phone" type="tel" class="validate" length="10">
+          <label for="icon_telephone">Telephone</label>
+        </div>
+        <div class="input-field col s6">
+        
+          <input  name="email" type="email" class="validate">
+          <label for="icon_prefix">Email</label>
+          <div class="input-field col s6">
+           
+          <input  name="password" type="password" class="validate">
+          <label for="icon_prefix">Password</label>
+        </div>
+        <div class="input-field col s6">
+           
+          <input  name="confirm_password" type="password" class="validate">
+          <label for="icon_prefix"> Confirm Password</label>
+        </div>
+        <div class="input-field col s6">
+           
+          <input  name="card_name" type="text" class="validate">
+          <label for="icon_prefix">Name on Card</label>
+        </div>
+        <div class="input-field col s6">
+           
+          <input  name="card_no" type="number" class="validate" length="16">
+          <label for="icon_prefix">Credit Card Number</label>
+        </div>
+        <div class="input-field col s6">
+           
+          <input  name="cvv" type="password" class="validate" length="3">
+          <label for="icon_prefix">Cvv</label>
+        </div>
+        <div class="input-field col s6">
+           
+          <input type="date" class="datepicker">
+          <label for="icon_prefix">Expiry Date</label>
+        </div>
+          <button class="btn waves-effect waves-light" type="submit" id="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+  <p id ="result"></p>
+        </div>
+      </div>
+    </form>
+  </div>
     </body>
   </html>

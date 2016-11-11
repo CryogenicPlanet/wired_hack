@@ -23,7 +23,7 @@ public class hash_salt {
             return hexString.toString();
         }
         catch (NoSuchAlgorithmException e) {
-
+                    e.printStackTrace();
         }
             return null;
 

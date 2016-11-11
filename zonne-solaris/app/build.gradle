@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 20
     buildToolsVersion "19.1.0"
 
     defaultConfig {
         applicationId "teamzonne.zonne_solaris"
         minSdkVersion 14
-        targetSdkVersion 24
+        targetSdkVersion 16
         versionCode 1
         versionName "1.0"
     }

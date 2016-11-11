@@ -31,35 +31,42 @@ public class SignUpActivity extends AppCompatActivity {
                 sign_up.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        View header = (View)getLayoutInflater().inflate(R.layout.status_layout, null);
-                        TextView headerValue = (TextView)header . findViewById(R.id.status);
-                        if(!(findViewById(R.id.password) == (findViewById(R.id.confirm_password)){
-                            //password don't match
-                            headerValue.setText("Passwords Don't match");
-                                } else{
-                            hash_salt hasher = new hash_salt();
-                            byte[] salt = hasher.getSalt();
-                            String[] userinfo = {findViewById(
-                                    R.id.user_name),
-                                    hasher.hash((findViewById(R.id.password)), salt),
-                                    salt,
-                                    hasher.hash((findViewById(R.id.card_no)), salt),//credit card no
-                                    hasher.hash((findViewById(R.id.exp_date)), salt), // expiry date
-                                    hasher.hash((findViewById(R.id.cvv)), salt),
-                                    findViewById(R.id.card_name),
-                                    findViewById(R.id.email),
-                                    findViewById(R.id.phone)
-
-                            };
-
-                            boolean Signup = add_user(v,userinfo)
+                        try {
+                            View header = (View) getLayoutInflater().inflate(R.layout.status_layout, null);
+                            TextView headerValue = (TextView) header.findViewById(R.id.status);
+                            if (((findViewById(R.id.password) == (findViewById(R.id.confirm_password))))) {
+                                //password don't match
+                                headerValue.setText("Passwords Don't match");
 
 
-                            if (Signup)
-                            headerValue.setText("Added User");
-                            else
-                                headerValue.setText("Failled to add new user");
+                            } else {
+                                hash_salt hasher = new hash_salt();
+                                byte[] salt = hasher.getSalt();
+                                String[] userinfo = {findViewById(
+                                        R.id.user_name),
+                                        hasher.hash((findViewById(R.id.password)), salt),
+                                        salt,
+                                        hasher.hash((findViewById(R.id.card_no)), salt),//credit card no
+                                        hasher.hash((findViewById(R.id.exp_date)), salt), // expiry date
+                                        hasher.hash((findViewById(R.id.cvv)), salt),
+                                        findViewById(R.id.card_name),
+                                        findViewById(R.id.email),
+                                        findViewById(R.id.phone)
 
+                                };
+
+                                boolean Signup = add_user(v, userinfo)
+
+
+                                if (Signup)
+                                    headerValue.setText("Added User");
+                                else
+                                    headerValue.setText("Failled to add new user");
+
+                            }
+                        }
+                        catch (Exception e) {
+                            e.printStackTrace();
                         }
                     }
                 });

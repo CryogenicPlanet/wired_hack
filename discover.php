@@ -11,6 +11,7 @@ $result = $link->query($sql);
 ?>
 <html>
     <head>
+      <title Zonne-Solaris-Discover</title>
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->

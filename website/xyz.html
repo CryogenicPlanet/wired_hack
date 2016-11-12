@@ -1,0 +1,71 @@
+<html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Home</title>
+    </head>
+
+    <body>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+      	<div class="parallax">
+      <div class="parallax"><img src="https://s-media-cache-ak0.pinimg.com/originals/a5/93/1c/a5931c16a3d4f07ddb2caa3c121b9941.jpg"></div>
+	   	</div>
+
+      <script type="text/javascript">$(document).ready(function(){
+      $('.parallax').parallax();
+    });</script>
+     
+      
+        
+    <br><br><br>
+    <div class="row center"><img src="http://www.clipartkid.com/images/467/half-rising-sun-clip-art-5agf1e-clipart.png" width="300" height="200"></div>
+    <br>
+    <div align="center">
+    <h3 style="color: #eeeeee">Zonne Solaris</h3>
+    <h5 style="color: #eeeeee">Solar Projects Crowd Funding Platform!</h5>
+    <br><br>
+    </div>
+    
+  <br><br>
+    </div>
+    <div align="center">
+      <a href="home.php" class="waves-effect waves-light btn">Home</a>
+      <a href="discover.php" class="waves-effect waves-light btn">Discover</a>
+      <a href="!#" class="waves-effect waves-light btn">Know More</a>
+      <ul class="collection">
+        <li class="collection-item avatar">
+      <i class="material-icons circle">payment</i>
+      <span class="title">Title</span>
+      <p>Total Donations <br>
+         <?php
+                       $servername = "sql6.freemysqlhosting.net";
+              $username = "sql6144082";
+              $password = "rzFA99rJMe";   
+              $link = new mysqli($servername, $username,$password,$username);
+              if ($link->connect_error) {
+                  die('Could not connect: ' . $link->connect_error);
+              }
+              $sql = "SELECT Amount FROM Donations";
+              $result = $link->query($sql);
+                  $dn_amount;
+                            if ($result->num_rows > 0) {
+              // output data of each row
+              while($row = $result->fetch_assoc()){
+                  $dn_amount = $dn_amount + $row;
+              }}
+              echo $dn_amount;
+         ?>
+      </p>
+      </li>
+      </ul>
+    </div>
+    </body>
+  </html>

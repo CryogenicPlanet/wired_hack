@@ -25,8 +25,8 @@ $result = $link->query($sql);
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
          <div class="navbar-fixed">
-              <nav>
-                <div class="nav-wrapper">
+              <nav class="teal">
+                <div class="nav-wrapper teal">
                   <a href="#" class="brand-logo">Zonne Solaris</a>
                   <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="home.php">Home</a></li>
@@ -40,35 +40,27 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) 
 {
-  $dn_amount;
   $pid = $row['PID'];
  // echo $pid;
   
   $sql_donation  = "SELECT Amount FROM Donations WHERE PID ='" . $pid ."'";
   $result_dn = $link->query($sql_donation);
  // echo $sql_donation;
-    if ($result_dn->num_rows > 0) {
-    // output data of each row
-    while($row_dn = $result_dn->fetch_assoc()) {
-      $dn_amount = $dn_amount + $row_dn['Amount'];
-    //  echo $dn_amount;
-    }
-    }
+  
     $cid = $row['CID'];
     $sql_c = "SELECT Cname FROM Company WHERE CID ='". $cid ."'";
     $result_c = $link->query($sql_c);
-     if ($result_c->num_rows > 0) {
-    // output data of each row
-    while($row_c = $result_c->fetch_assoc()) {
-    
+    $cname ;
+  $modal_desp = $row['Descrption'];
+    $i =1;
     //  echo $dn_amount;
     
   echo '
  <div class="row">
         <div class="col s8 offset-s2">
 
-  <div class="card blue lighten-1">
-    <h4 align="center">'. $row['title'] .'</h4>
+  <div class="card teal">
+    <h4 align="center" class="white-text">'; $title =$row['title']; echo $title; echo '</h4>
       <div class="slider">
     <ul class="slides">
       <li>
@@ -84,22 +76,33 @@ if ($result->num_rows > 0) {
       </li>
     </ul>
   </div>
-    </div>
-    <div class="card-content blue lighten-1">
+    <span class="white-text">
       <h5>Location : '. $row['Location'].'</h5>
       <h5>Desired Investment : '. $row['DesiredAmount'].'</h5>
-      <h5> Donated Amount : ' . $dn_amount .' </h5>
-       <div style="float: left;"><p>By '. $row_c['Cname'] . '</p> </div>
-
+      <h5> Donated Amount : ' ;  if ($result_dn->num_rows > 0) {
+    // output data of each row
+    while($row_dn = $result_dn->fetch_assoc()) {
+      $dn_amount = $dn_amount + $row_dn['Amount'];
+    //  echo $dn_amount;
+    }
+    echo $dn_amount;
+    $dn_amount = 0;
+    } echo ' </h5>
+      
+       <div style="float: left;"><p>By ';  if ($result_c->num_rows > 0) {
+    // output data of each row
+    while($row_c = $result_c->fetch_assoc()) { 
+    echo $row_c["Cname"]; }} echo '</p> </div>
+</span>
         <!-- Modal Trigger -->
-  <div align="right"><a class="modal-trigger waves-effect waves-light btn" href="#modal1">More Info</a></div>
+  <div align="right"><a class="modal-trigger waves-effect waves-light btn" href="#modal'.$id.'">More Info</a></div>
 
  
-  <div style="float: right;" id="modal1" class="modal modal-fixed-footer">
+  <div style="float: right;" id="modal'. $id.'" class="modal modal-fixed-footer">
     <div class="modal-content">
-      <h4 align="center">'. $row['title'] .'</h4>
-      <p>'. $row['Descrption'].'</p><br>
-    <div style="float: right;"><a class="waves-effect waves-light btn red">Cancel</a></div>
+      <h4 align="center">'. $title .'</h4>
+      <p>'. $modal_desp .'</p><br>
+   <!-- <div style="float: right;"><a class="waves-effect waves-light btn red">Cancel</a></div> -->
     <div align="right"><a class="waves-effect waves-light btn blue" href="donation.php?pid='. $pid . '"> Donate</a></div>
     </div> 
     <script type="text/javascript">$(document).ready(function(){
@@ -118,9 +121,9 @@ if ($result->num_rows > 0) {
 </div>
 
 </div>
+
 ' ;
-}
-}
+$id++;
 }
 }
 
@@ -129,3 +132,29 @@ function printPid($x){
 }
 $link->close();
 ?>
+<footer class="page-footer teal">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <p class="grey-text text-lighten-4"><h5 class="white-text">Have a project? </h5></p>
+                <a href=""mailto:rahultarak12345@gmail.com?Subject=New%20Project"> <p class="white-text">Write us an email with your project title, 3 pictures, desired amount and a description. Once your porject has been verfied by our team it will added to our platform<</p> </a>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Quick Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="mailto:rahultarak12345@gmail.com"><i class="material-icons">email</i>Email</a></li>
+                  <li><a class="grey-text text-lighten-3" href="tel:8143418605"><i class="material-icons">phone</i>Phone</a></li>
+                   <li><a class="grey-text text-lighten-3" href="updates.php"><i class="material-icons">present_to_all</i>Add Updates</a></li>
+                 
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © Zonne Solaris 2016
+            </div>
+          </div>
+        </footer>
+        </body>
+        </html>

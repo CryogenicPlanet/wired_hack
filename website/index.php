@@ -80,52 +80,35 @@
           </div><div class="row">
       <div class="col s12" id="know_more">
         <div class="card-panel teal">
-          <span class="white-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-          sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-          magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-          quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-          ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-          dolor in hendrerit in vulputate velit esse molestie consequat,
-          vel illum dolore eu feugiat nulla facilisis at vero eros et
-          accumsan et iusto odio dignissim qui blandit praesent luptatum
-          zzril delenit augue duis dolore te feugait nulla facilisi.
-          Nam liber tempor cum soluta nobis eleifend option congue
-          nihil imperdiet doming id quod mazim placerat facer possim
-          assum. Typi non habent claritatem insitam; est usus legentis
-          in iis qui facit eorum claritatem. Investigationes
-          demonstraverunt lectores legere me lius quod ii legunt saepius.
-          Claritas est etiam processus dynamicus, qui sequitur mutationem
-          consuetudium lectorum. Mirum est notare quam littera gothica,
-          quam nunc putamus parum claram, anteposuerit litterarum formas
-          humanitatis per seacula quarta decima et quinta decima. Eodem
-          modo typi, qui nunc nobis videntur parum clari, fiant sollemnes
-          in futurum.
+          <span class="white-text">We Zonne-solaris are here to provide  you open source solar projects.
+And this is the place where you find many solar projects and also you can upload your own solar projects and also you can donate your projects or money here.
+This is a opensource with a free of cost.
+You can get funding for your own projects.
           </span>
         </div>
       </div>
     </div>
-<footer class="page-footer">
+<footer class="page-footer teal">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <p class="grey-text text-lighten-4"><h5 class="white-text">Have a project? </h5></p>
+                <a href=""mailto:rahultarak12345@gmail.com?Subject=New%20Project"> <p class="white-text">Write us an email with your project title, 3 pictures, desired amount and a description. Once your porject has been verfied by our team it will added to our platform<</p> </a>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
+                <h5 class="white-text">Quick Links</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    <li><a class="grey-text text-lighten-3" href="mailto:rahultarak12345@gmail.com"><i class="material-icons">email</i>Email</a></li>
+                  <li><a class="grey-text text-lighten-3" href="tel:8143418605"><i class="material-icons">phone</i>Phone</a></li>
+                   <li><a class="grey-text text-lighten-3" href="updates.php"><i class="material-icons">present_to_all</i>Add Updates</a></li>
+                 
                 </ul>
               </div>
             </div>
           </div>
           <div class="footer-copyright">
             <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            © Zonne Solaris 2016
             </div>
           </div>
         </footer>

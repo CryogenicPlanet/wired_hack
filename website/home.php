@@ -35,8 +35,8 @@ $result = $link->query($sql);
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
          <div class="navbar-fixed">
-              <nav>
-                <div class="nav-wrapper">
+              <nav class"teal">
+                <div class="nav-wrapper teal">
                   <a href="#" class="brand-logo">Zonne Solaris</a>
                   <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="#">Home</a></li>
@@ -72,7 +72,7 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) 
 {
- $sql2 = "SELECT CID FROM Project WHERE PID='" . $row['PID'] . "'";
+ $sql2 = "SELECT CID,title FROM Project WHERE PID='" . $row['PID'] . "'";
   $result2 = $link->query($sql2);
     if ($result2->num_rows > 0) {
     // output data of each row
@@ -101,7 +101,7 @@ echo '
       <p> By '. $row3['Cname'].'</p>
     </div>
     <div class="card-reveal grey darken-2">
-      <span class="card-title grey-text text-lighten-3">'. $row['Title'] . '<i class="material-icons right">close</i></span>
+      <span class="card-title grey-text text-lighten-3">'. $row2['title'] . '<i class="material-icons right">close</i></span>
       <p class="grey-text text-lighten-3">'. $row['Description'] . '</p>
     </div>
   </div>
@@ -120,5 +120,29 @@ $link->close();
 </div>
 </div>
 </div>
+<footer class="page-footer teal">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <p class="grey-text text-lighten-4"><h5 class="white-text">Have a project? </h5></p>
+                <a href=""mailto:rahultarak12345@gmail.com?Subject=New%20Project"> <p class="white-text">Write us an email with your project title, 3 pictures, desired amount and a description. Once your porject has been verfied by our team it will added to our platform</p> </a>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Quick Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="mailto:rahultarak12345@gmail.com"><i class="material-icons">email</i>Email</a></li>
+                  <li><a class="grey-text text-lighten-3" href="tel:8143418605"><i class="material-icons">phone</i>Phone</a></li>
+                   <li><a class="grey-text text-lighten-3" href="updates.php"><i class="material-icons">present_to_all</i>Add Updates</a></li>
+                 
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © Zonne Solaris 2016
+            </div>
+          </div>
+        </footer>
 </body>
 </html>

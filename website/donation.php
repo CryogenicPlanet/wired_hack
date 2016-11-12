@@ -1,7 +1,6 @@
 <?php
 $pid = $_GET['pid'];
 $donation = $_POST['donation'];
-echo $pid;
 $PID = $_POST['PID'];
 ?>
  <html>
@@ -73,9 +72,20 @@ $sql = "INSERT INTO Donations (PID,Amount)
 VALUES ('". $PID ."','" . $donation ."')";
 if ($link->query($sql) === TRUE) {
          echo '
-         <div class="col s6 offset-3>
-                <h3 class="grey-text grey darken-3> Thank You for donating ' . $donation . ' ruppes </h3
-                </div>
+                <div class="row">
+      <div class="col s6 offset-s3">
+        <div class="card-panel teal">
+                        <div class="card-content white-text">
+          <span class="white-text"><h3 class="white-text"> Thank You for donating ' . $donation . ' ruppes  </h3>
+          </span>
+        </div>
+        <div class="card-action">
+              <a href="index.php">Go Back Home </a>
+             
+            </div>
+      </div>
+    </div>
+            
          ';
     
 } else {
